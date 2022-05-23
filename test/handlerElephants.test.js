@@ -8,6 +8,7 @@ describe('Testes da função HandlerElephants', () => {
     expect(handlerElephants('names')).toEqual(expect.arrayContaining(['Jefferson']));
 
     // Para o argumento count deve retornar o número inteiro 4;
+    expect(handlerElephants('count')).toBe(4);
     expect(Number.isInteger(handlerElephants('count'))).toBe(true);
 
     // Para o argumento averageAge deve retornar um número próximo a 10.5
