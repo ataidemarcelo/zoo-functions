@@ -1,6 +1,6 @@
 const data = require('../data/zoo_data');
 
-function getEmployeeByIdentifiers(identifiers) {
+function getEmployeeByIdentifier(identifiers) {
   const { id, name } = identifiers;
 
   const employeeData = data.employees.find((employee) => {
@@ -54,7 +54,7 @@ function createEmployeeCoverage(employee) {
   return coverage;
 }
 
-function createAllEmployeeCoverage(employees) {
+function createCoverageOfAllEmployees(employees) {
   const allEmployeeCoverage = [];
 
   employees.forEach((employee) => {
@@ -67,10 +67,10 @@ function createAllEmployeeCoverage(employees) {
 
 function getEmployeesCoverage(identifiers) {
   if (!identifiers) {
-    const allEmployeeCoverage = createAllEmployeeCoverage(data.employees);
-    return allEmployeeCoverage;
+    const coverageOfAllEmployees = createCoverageOfAllEmployees(data.employees);
+    return coverageOfAllEmployees;
   }
-  const employee = getEmployeeByIdentifiers(identifiers);
+  const employee = getEmployeeByIdentifier(identifiers);
 
   if (!employee) {
     throw Error('Informações inválidas');
